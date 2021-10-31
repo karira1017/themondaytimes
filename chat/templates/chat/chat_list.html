@@ -1,0 +1,28 @@
+{% extends "blog/base.html" %}
+
+{% block title %}
+
+{% endblock title %}
+
+{% block content %}
+<br>
+<br>
+{% for chat in object_list %}
+  <article class="media content-section">
+          <img class="rounded-circle article-img" src="{{ chat.user.profile.image.url }}">
+    <div class="chat" style=" background: white; width: 100%; ">
+    	{% if chat.user.is_superuser %}
+    		  <h2 class="chat-user-special"> {{ chat.user }}- Administrator </h2>
+        {% else %}
+        <h2 class="chat-user"> {{ chat.user }} </h2>    		    
+        {% endif %}
+    		<p><b class="chat-content">{{ chat|linebreaks }}</b></p>
+    		  <small class="chat-date">{{ chat.posted_at }}</small>
+    </div><br><br>
+    </article>
+    {% empty %}
+    <h1 class="heading">No Chats Yet Be The First To Message!</h1><br>
+
+    {% endfor %}
+    <br><a href="{% url 'chat:new' %}"><button class="btn btn-outline-primary">New Message</button></a>
+{% endblock content %}

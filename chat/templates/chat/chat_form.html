@@ -1,0 +1,13 @@
+{% extends "blog/base.html" %}
+{% load profanity %}
+{% block content %}
+    <div style="color: royalblue;">
+        <form method="POST">
+            <br>
+    	   {% csrf_token %}
+    	   {{ form.as_p }}
+
+    	   <br><input type="submit" value="Post" class="btn btn-lg btn-outline-primary">
+        </form>
+    </div>
+{% endblock content %}
