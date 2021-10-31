@@ -6,3 +6,4 @@ whitenoise==5.3.0
 django-environ
 django-heroku
 django-crispy-forms
+django-profanity-check
