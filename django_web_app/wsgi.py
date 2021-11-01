@@ -13,4 +13,6 @@ from django.core.wsgi import get_wsgi_application
 
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'django_web_app.settings')
 
+sys.path.append('C:/Users/kimat/Desktop/projects/django_web_app/django_web_app')
+
 application = get_wsgi_application()
